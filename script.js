@@ -103,11 +103,10 @@ function getSystemResponse() {
     return responses[randomIndex];
 }
 
-
-
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
 import { getDatabase, onValue, ref, set} from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
-
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+const analytics = getAnalytics(app);
 const firebaseConfig = {
     apiKey: "AIzaSyBRZvz3wQDePA2-NMXsU0gNqGpA2qNtVd0",
     authDomain: "kielechatgpt.firebaseapp.com",
@@ -116,7 +115,9 @@ const firebaseConfig = {
     messagingSenderId: "1059150846305",
     appId: "1:1059150846305:web:9f8185a96f834da32c0d20",
     databaseURL: "https://kielechatgpt-default-rtdb.europe-west1.firebasedatabase.app",
+    measurementId: "G-N0KGML878D"
 };
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // Initialize Realtime Database and get a reference to the service
