@@ -106,7 +106,6 @@ function getSystemResponse() {
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
 import { getDatabase, onValue, ref, set} from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
-const analytics = getAnalytics(app);
 const firebaseConfig = {
     apiKey: "AIzaSyBRZvz3wQDePA2-NMXsU0gNqGpA2qNtVd0",
     authDomain: "kielechatgpt.firebaseapp.com",
@@ -122,6 +121,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 // Initialize Realtime Database and get a reference to the service
 const db = getDatabase(app);
+const analytics = getAnalytics(app);
 
 // Reference to the data in Firebase Realtime Database
 // Listen for Random Answer changes in the data in Firebase at /chat/random/<here>.
